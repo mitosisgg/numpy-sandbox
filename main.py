@@ -6,7 +6,6 @@ a[1]
 
 b = np.zeros(8)
 b
-type(b[0])
 
 c = np.ones(8)
 c
@@ -97,4 +96,75 @@ a[a < 6]
 a[a >= 5]
 a[a % 2 == 0]
 a[(a>2) & (a<9)]
+
+# basic operations
+data = np.array([2, 4])
+ones = np.ones(2, dtype=int )
+data + ones
+data - ones
+data * ones
+data / ones
+
+a = np.array([1,2,3,4])
+a.sum()
+
+b = np.array([[1,2], [3,4]])
+b.sum(axis=0)
+b.sum(axis=1)
+
+# broadcasting
+data = np.array([1.2, 1.5])
+data * 2
+
+data.max()
+data.min()
+data.sum()
+
+data = np.array([[1,2,3], 
+                [4,5,6], 
+                [7,8,9]])
+data.max()
+data.max(axis=0)
+data.max(axis=1)
+
+# indexing matrices
+data[1]
+data[1:]
+data[:1]
+data[0,2]
+data[1:, 1:]
+
+# random matrix generation
+a = np.random.random((3,4))
+a
+
+rng = np.random.default_rng()
+rng.integers(100, size=(2, 4)) 
+
+# find distinct members
+a = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])
+np.unique(a)
+
+# find distinct members and their indices
+unique_values, indices_list = np.unique(a, return_index=True)
+indices_list
+
+# find distinct members and count
+unique_values, count = np.unique(a, return_counts=True)
+count
+
+
+# reshaping matrices
+data = np.array([1,2,3,4,5,6])
+data.reshape((3,2))
+data.reshape((2,3))
+data.reshape((3,3)) # errors since size of data does not fit shape
+
+# transpose
+data = np.array([[1,2,3], [4,5,6]])
+data.transpose()
+data.T
+
+
+
 
